@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Top_2000.Models.Lijst>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Top 2000 Lijst</h2>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table class="table">
+    <tr>
+        <th>
+            <h5><b>Positie</b></h5>
+        </th>
+        <th>
+            <h5><b>Titel</b></h5>
+        </th>
+        <th>
+            <h5><b>Jaar</b></h5>
+        </th>
+        <th>
+            <h5><b>Artiest</b></h5>
+        </th>
+    </tr>
+
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.positie)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Song.titel)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.top2000jaar)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Song.Artiest.naam)
+    </td>
+</tr>
+}
+
+</table>
