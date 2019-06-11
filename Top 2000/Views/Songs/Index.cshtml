@@ -38,13 +38,15 @@
     {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.songid }) |
-            @Html.ActionLink("Details", "Details", new {/* id=item.PrimaryKey */}) |
-            @Html.ActionLink("Delete", "Delete", new {/* id=item.PrimaryKey */})
+            @Html.ActionLink("Details", "Details", new {id=item.songid}) |
+            @Html.ActionLink("Delete", "Delete", new {id=item.songid})
         </td>
     }
     @if (this.User.IsInRole("Gebruiker"))
     {
-        <td></td>
+        <td>
+
+        </td>
     }
 </tr>
 }
